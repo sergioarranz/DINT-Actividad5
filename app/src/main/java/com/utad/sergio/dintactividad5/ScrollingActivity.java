@@ -66,7 +66,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
     public void showFabs(){
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)fab1.getLayoutParams();
-        layoutParams.rightMargin+=(int)(fab1.getWidth()*2.5);
+        layoutParams.rightMargin+=(int)(fab1.getWidth()*2);
         fab1.setLayoutParams(layoutParams);
         fab1.startAnimation(show_fab1);
         fab1.setClickable(true);
@@ -74,7 +74,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
     public void hideFabs(){
         CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)fab1.getLayoutParams();
-        layoutParams.rightMargin-=(int)(fab1.getWidth()*2.5);
+        layoutParams.rightMargin-=(int)(fab1.getWidth()*2);
         fab1.setLayoutParams(layoutParams);
         fab1.startAnimation(hide_fab1);
         fab1.setClickable(false);
