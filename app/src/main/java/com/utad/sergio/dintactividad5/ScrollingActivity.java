@@ -1,6 +1,7 @@
 package com.utad.sergio.dintactividad5;
 
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -64,14 +65,18 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void showFabs(){
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams)fab1.getLayoutParams();
-        layoutParams.rightMargin+=(int)(fab1.getWidth()*1.7);
-        layoutParams.bottomMargin+=(int)(fab1.getHeight()*0.25);
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)fab1.getLayoutParams();
+        layoutParams.rightMargin+=(int)(fab1.getWidth()*2.5);
         fab1.setLayoutParams(layoutParams);
         fab1.startAnimation(show_fab1);
+        fab1.setClickable(true);
     }
 
     public void hideFabs(){
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams)fab1.getLayoutParams();
+        layoutParams.rightMargin-=(int)(fab1.getWidth()*2.5);
+        fab1.setLayoutParams(layoutParams);
         fab1.startAnimation(hide_fab1);
+        fab1.setClickable(false);
     }
 }
